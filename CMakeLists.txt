@@ -8,6 +8,11 @@ if (POLICY CMP0141)
   cmake_policy(SET CMP0141 NEW)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
+add_definitions(-DSPDLOG_COMPILED_LIB)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}\\spdlog\\include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}\\asio\\include)
+link_libraries(${CMAKE_CURRENT_SOURCE_DIR}\\spdlog\\lib\\spdlogd.lib)
 
 project ("ARINC615A-api")
 

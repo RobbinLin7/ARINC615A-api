@@ -3,7 +3,7 @@
 #
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (ARINC615A-api "ARINC615A-api.cpp" "ARINC615A-api.h")
+add_executable (ARINC615A-api "ARINC615A-api.cpp" "ARINC615A-api.h"  "singleton.h" "threadpool.h" "safequeue.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ARINC615A-api PROPERTY CXX_STANDARD 20)
